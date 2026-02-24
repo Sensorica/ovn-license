@@ -1,0 +1,50 @@
+{
+  "schema_version": "0.1",
+  "project": {
+    "name": "example-happ",
+    "repository": "https://github.com/example-org/example-happ",
+    "license_version": "1.0"
+  },
+  "contributors": [
+    {
+      "name": "Alice",
+      "identifier": "alice@example.com",
+      "share": 50,
+      "roles": ["zome development", "architecture", "project lead"]
+    },
+    {
+      "name": "Bob",
+      "identifier": "bob@example.com",
+      "share": 30,
+      "roles": ["UI development", "testing"]
+    },
+    {
+      "name": "Carla",
+      "identifier": "carla@example.com",
+      "share": 20,
+      "roles": ["documentation", "community"]
+    }
+  ],
+  "metadata": {
+    "created": "2025-06-01",
+    "last_updated": "2025-06-01",
+    "governance": "Consensus among active contributors.",
+    "dispute_resolution": "Discussion in project issue tracker. Fallback: equal-shares per pie-chart specification."
+  },
+  "organization": {
+    "name": "Example Org",
+    "url": "https://example.com",
+    "type": "cooperative"
+  },
+  "extensions": {
+    "holochain": {
+      "dna_hash": "uhC0kExampleDnaHash1234567890abcdef",
+      "agent_ids": {
+        "alice@example.com": "uhCAkAliceAgentId1234567890abcdef",
+        "bob@example.com": "uhCAkBobAgentId1234567890abcdefgh",
+        "carla@example.com": "uhCAkCarlaAgentId1234567890abcdef"
+      },
+      "zome_name": "contribution_tracker"
+    }
+  }
+}

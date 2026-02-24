@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.1",
+  "project": {
+    "name": "example-documentation",
+    "repository": "https://github.com/example-org/example-docs",
+    "license_version": "1.0"
+  },
+  "contributors": [
+    {
+      "name": "Fatima",
+      "identifier": "fatima@example.com",
+      "share": 45,
+      "roles": ["primary author", "editor"]
+    },
+    {
+      "name": "George",
+      "identifier": "george@example.com",
+      "share": 30,
+      "roles": ["co-author", "illustrator"]
+    },
+    {
+      "name": "Hana",
+      "identifier": "hana@example.com",
+      "share": 25,
+      "roles": ["reviewer", "translator"]
+    }
+  ],
+  "metadata": {
+    "created": "2025-05-01",
+    "last_updated": "2025-05-01",
+    "governance": "Consensus among active authors. Shares adjusted quarterly based on contribution volume.",
+    "dispute_resolution": "Discussion among authors. Mediation by project lead. Fallback: equal-shares per pie-chart specification."
+  }
+}

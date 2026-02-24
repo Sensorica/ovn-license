@@ -1,0 +1,28 @@
+{
+  "schema_version": "0.1",
+  "project": {
+    "name": "example-python-service",
+    "repository": "https://github.com/example-org/example-python-service",
+    "license_version": "1.0"
+  },
+  "contributors": [
+    {
+      "name": "Dana",
+      "identifier": "dana@example.com",
+      "share": 60,
+      "roles": ["core developer", "maintainer"]
+    },
+    {
+      "name": "Eli",
+      "identifier": "eli@example.com",
+      "share": 40,
+      "roles": ["API design", "documentation", "testing"]
+    }
+  ],
+  "metadata": {
+    "created": "2025-04-01",
+    "last_updated": "2025-04-01",
+    "governance": "Maintainer discretion with contributor input.",
+    "dispute_resolution": "Discussion in project issue tracker. Fallback: equal-shares per pie-chart specification."
+  }
+}
