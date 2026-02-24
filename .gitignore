@@ -15,3 +15,7 @@ Desktop.ini
 # Temporary files
 *.tmp
 *.bak
+
+# Local aliases
+*.local
+*.local.*
