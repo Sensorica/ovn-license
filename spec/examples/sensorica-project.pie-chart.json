@@ -1,0 +1,66 @@
+{
+  "schema_version": "0.1",
+  "project": {
+    "name": "sensor-network-firmware",
+    "repository": "https://github.com/sensorica/sensor-network-firmware",
+    "license_version": "1.0"
+  },
+  "contributors": [
+    {
+      "name": "Tibi",
+      "identifier": "tibi@sensorica.co",
+      "share": 35,
+      "roles": ["project lead", "hardware design", "firmware development"]
+    },
+    {
+      "name": "Lynn",
+      "identifier": "lynn@sensorica.co",
+      "share": 25,
+      "roles": ["core developer", "testing"]
+    },
+    {
+      "name": "Bob",
+      "identifier": "bob@sensorica.co",
+      "share": 25,
+      "roles": ["documentation", "community engagement"]
+    },
+    {
+      "name": "Carla",
+      "identifier": "carla@example.com",
+      "share": 15,
+      "roles": ["code review", "security audit"]
+    }
+  ],
+  "metadata": {
+    "created": "2025-01-01",
+    "last_updated": "2025-06-15",
+    "governance": "Consensus among active contributors, facilitated by the Sensorica network.",
+    "dispute_resolution": "Mediation through the Sensorica network governance process. See https://ovn.world/index.php?title=Governance"
+  },
+  "organization": {
+    "name": "Sensorica",
+    "url": "https://www.sensorica.co",
+    "type": "value network"
+  },
+  "history": [
+    {
+      "date": "2025-01-01",
+      "description": "Initial pie-chart created with three founding contributors.",
+      "shares_snapshot": {
+        "tibi@sensorica.co": 40,
+        "lynn@sensorica.co": 35,
+        "bob@sensorica.co": 25
+      }
+    },
+    {
+      "date": "2025-06-15",
+      "description": "Added Carla after security audit contribution. Rebalanced shares by consensus.",
+      "shares_snapshot": {
+        "tibi@sensorica.co": 35,
+        "lynn@sensorica.co": 25,
+        "bob@sensorica.co": 25,
+        "carla@example.com": 15
+      }
+    }
+  ]
+}

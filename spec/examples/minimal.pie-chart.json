@@ -1,0 +1,21 @@
+{
+  "schema_version": "0.1",
+  "project": {
+    "name": "my-project",
+    "repository": "https://github.com/example/my-project",
+    "license_version": "1.0"
+  },
+  "contributors": [
+    {
+      "name": "Alice Developer",
+      "identifier": "alice@example.com",
+      "share": 100
+    }
+  ],
+  "metadata": {
+    "created": "2025-01-15",
+    "last_updated": "2025-01-15",
+    "governance": "Maintainer discretion",
+    "dispute_resolution": "See project GOVERNANCE.md or contact maintainer directly."
+  }
+}

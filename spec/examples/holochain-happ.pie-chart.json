@@ -1,0 +1,50 @@
+{
+  "schema_version": "0.1",
+  "project": {
+    "name": "peer-marketplace-happ",
+    "repository": "https://github.com/example/peer-marketplace-happ",
+    "license_version": "1.0"
+  },
+  "contributors": [
+    {
+      "name": "Alice",
+      "identifier": "alice@example.com",
+      "share": 45,
+      "roles": ["zome development", "architecture"]
+    },
+    {
+      "name": "Bob",
+      "identifier": "bob@example.com",
+      "share": 30,
+      "roles": ["UI development", "testing"]
+    },
+    {
+      "name": "Carla",
+      "identifier": "carla@example.com",
+      "share": 25,
+      "roles": ["documentation", "community facilitation"]
+    }
+  ],
+  "metadata": {
+    "created": "2025-03-01",
+    "last_updated": "2025-09-10",
+    "governance": "DAO vote among contributors with active agent IDs.",
+    "dispute_resolution": "On-chain dispute resolution via the governance zome. Fallback: equal-shares as per the pie-chart specification."
+  },
+  "organization": {
+    "name": "Peer Marketplace Collective",
+    "type": "informal collective"
+  },
+  "extensions": {
+    "holochain": {
+      "dna_hash": "uhC0kExampleDnaHash1234567890abcdef",
+      "agent_ids": {
+        "alice@example.com": "uhCAkAliceAgentId1234567890abcdef",
+        "bob@example.com": "uhCAkBobAgentId1234567890abcdefgh",
+        "carla@example.com": "uhCAkCarlaAgentId1234567890abcdef"
+      },
+      "zome_name": "contribution_tracker",
+      "network_seed": "peer-marketplace-prod-v1"
+    }
+  }
+}
