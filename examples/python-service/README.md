@@ -1,12 +1,12 @@
 # Applying the OVN License to a Python Service
 
-This guide shows how to apply the OVN License for Digital Resources v1.0 to a Python project (library, CLI tool, or web service).
+This guide shows how to apply the OVN License for Digital Resources v2.0 to a Python project (library, CLI tool, or web service).
 
 ## Step 1: Add License and Pie-Chart Files
 
 ```
 your-python-project/
-  LICENSE.md                OVN License v1.0
+  LICENSE.md                OVN License v2.0
   pie-chart.json            Contribution Pie-Chart
   pyproject.toml            Project metadata (reference license)
   src/
@@ -26,10 +26,11 @@ Create a `pie-chart.json` in your project root. See [pie-chart.json](pie-chart.j
 Add a license header to each Python source file:
 
 ```python
-# This work is licensed under the OVN License for Digital Resources v1.0
-# Redistribution and Use require compliance with reciprocity terms.
+# This work is licensed under the OVN License for Digital Resources v2.0.
+# Use of this work is subject to contribution distribution and anti-circumvention terms.
 # See LICENSE file and accompanying Contribution Pie-Chart.
-# Copyright (c) 2025 Your Name or Organization
+# SPDX-License-Identifier: LicenseRef-OVN-Digital-2.0
+# Copyright (c) [year] Your Name or Organization
 ```
 
 For the package `__init__.py`, you may also include:
@@ -38,7 +39,7 @@ For the package `__init__.py`, you may also include:
 """
 your_package - Description of your package.
 
-Licensed under the OVN License for Digital Resources v1.0.
+Licensed under the OVN License for Digital Resources v2.0.
 See LICENSE file and accompanying Contribution Pie-Chart.
 """
 ```
@@ -55,9 +56,9 @@ description = "Your package description"
 license = {file = "LICENSE.md"}
 readme = "README.md"
 
-# Note: The SPDX identifier for the OVN License is not yet standardized.
-# Use "LicenseRef-OVN-Digital-1.0" as the custom identifier.
-# license = {text = "LicenseRef-OVN-Digital-1.0"}
+# Note: The SPDX identifier for the OVN License is not yet registered.
+# Use "LicenseRef-OVN-Digital-2.0" as the custom identifier.
+# license = {text = "LicenseRef-OVN-Digital-2.0"}
 
 [project.urls]
 Repository = "https://github.com/your-org/your-package"
@@ -83,12 +84,23 @@ include LICENSE.md
 include pie-chart.json
 ```
 
+## Step 6: Implement the Contribution Distribution Mechanism
+
+For Python services that process transactions, the Contribution Distribution Mechanism might be implemented as:
+
+- **Middleware** that captures a percentage of transaction value.
+- **A billing module** that allocates contributor shares per the pie-chart.
+- **An API layer** that deducts contribution shares from service fees.
+
+If the mechanism is not yet implemented, you can still adopt the license. The anti-circumvention obligations in Section 5 activate when the mechanism is added (see License Section 4(d)).
+
 ## Checklist
 
-- [ ] `LICENSE.md` file present with full OVN License text
+- [ ] `LICENSE.md` file present with full OVN License v2.0 text
 - [ ] `pie-chart.json` with valid contributor data
-- [ ] License headers in all `.py` source files
+- [ ] License headers in all `.py` source files (with SPDX identifier)
 - [ ] `pyproject.toml` references the license
 - [ ] `LICENSE.md` and `pie-chart.json` included in package distributions
 - [ ] Pie-chart validates against the JSON Schema
 - [ ] README mentions the license and links to the pie-chart
+- [ ] Contribution Distribution Mechanism implemented (or noted as planned)

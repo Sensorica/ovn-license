@@ -4,6 +4,64 @@ All notable changes to the OVN License for Digital Resources will be documented 
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [2.0] - 2025-02-24
+
+### Changed
+
+- **Standalone license framing.** Removed the claim that the license "builds on GPLv3." The preamble now acknowledges GPLv3, the Peer Production License, and CAL-1.0 as philosophical inspirations only, explicitly stating the license is legally independent from all three. (Resolves v1.0 Known Issue 1.)
+
+- **Protocol-level economic reciprocity.** Replaced the percentage-based honor system (0.5% non-commercial, 2% commercial) with a protocol-enforcement model. The license now describes a Contribution Distribution Mechanism built into the software that captures value during Transactional Activity automatically. The license protects this mechanism from circumvention rather than imposing external payment obligations. (Resolves v1.0 Known Issue 3.)
+
+- **Anti-circumvention as core legal mechanism.** Added Section 5 (Anti-Circumvention) prohibiting removal, disabling, or bypassing of the Contribution Distribution Mechanism. Modeled on CAL-1.0 Section 4.2.2 but applied to economic distribution rather than user autonomy.
+
+- **Tightened definitions.** Replaced "Material Benefits" (too vague) with "Transactional Activity" (exchange of economic value in a market context). Added definitions for Contribution Distribution Mechanism, Source Code, Recipient, You/Your, and Modify/Modified Version. Removed "Non-Commercial Entities," "Commercial Entities," and "Material Benefits." (Resolves v1.0 Known Issue 2.)
+
+- **Removed commercial/non-commercial distinction.** When the Contribution Distribution Mechanism applies uniformly to all Transactional Activity, the organizational form of the user is irrelevant. The PPL-inspired entity classification has been removed entirely.
+
+- **Explicit copyleft.** Section 3 now explicitly requires Modified Versions to be distributed under the same License (v1.0 implied but did not state this clearly). Added source code access requirement. Added protection against removal of existing Contributors from the Contribution Pie-Chart without consent.
+
+- **Fixed SPDX identifier.** Changed from `OVN Digital-1.0` (invalid, contains space) to `LicenseRef-OVN-Digital-2.0` (valid per SPDX specification for non-registered licenses). (Resolves v1.0 Known Issue 5.)
+
+- **Expanded warranty and liability section.** Section 9 now includes full warranty disclaimer, limitation of liability, and a mechanism-specific disclaimer stating the Contribution Distribution Mechanism carries no warranty of error-free operation.
+
+- **Updated section structure.** Expanded from 7 sections (numbered 0-6) to 12 sections (numbered 1-11 with preamble). Section numbering now starts at 1 per standard convention.
+
+### Added
+
+- **Section 4: Protocol Economics.** Describes the three-layer enforcement model (protocol mechanics, network validation, legal backstop). Includes a "soft launch" provision for projects that adopt the license before implementing the mechanism.
+
+- **Section 5: Anti-Circumvention.** Five subsections: no removal, no disabling, no bypassing, no contractual override, and parameter modification rules. This is the core legal innovation of v2.0.
+
+- **Section 6: Scope Exclusions.** Explicitly states that development and improvement (including grant-funded work), non-transactional internal use, education and research, personal use, and interoperability testing are all excluded from economic obligations.
+
+- **Section 7: Good Faith and Safe Harbor.** Good faith presumption for unintentional errors; 30-day cure period (retained from v1.0); notification requirement before enforcement; technical safe harbor for mechanism failures; de minimis threshold for low-value Transactional Activity.
+
+- **"Or any later version" provision.** Section 10 allows licensors to specify "v2.0 or any later version" for forward compatibility.
+
+- **CAL-1.0 reference in inspirations.** Section 11 now acknowledges CAL-1.0's contribution to the protocol-level enforcement concept.
+
+### Removed
+
+- **Fixed percentage tiers.** The 0.5% non-commercial and 2% commercial rates are no longer in the license text. Distribution parameters are now determined by the Work's implementation and governed through the Contribution Pie-Chart governance process.
+
+- **Commercial/non-commercial entity definitions.** These entity classifications have been removed from the license entirely.
+
+- **"Material Benefits" definition.** Replaced by "Transactional Activity" which provides a clearer trigger for when economic obligations apply.
+
+- **GPLv3 derivation language.** The phrase "builds on the GNU General Public License v3" has been removed.
+
+### Known Issues
+
+1. **Enforceability of anti-circumvention across jurisdictions.** The anti-circumvention clause is modeled on copyright license conditions. Enforceability may vary across jurisdictions, particularly between common-law and civil-law systems. This is a shared challenge with all copyleft licenses and is not unique to this license.
+
+2. **"Functionally equivalent to zero" boundary.** Section 5(e) prohibits setting the distribution to zero or "a value so low as to be functionally equivalent to zero." The exact boundary of this phrase will require case-by-case judgment and may benefit from interpretive guidance.
+
+3. **Transactional Activity boundary cases.** Some activities (freemium models with mixed free/paid transactions, advertising-supported use, speculative token systems) may be ambiguous. The definition focuses on "exchange of economic value in a market context" but edge cases exist.
+
+4. **Projects without a mechanism.** The "soft launch" provision (Section 4(d)) allows adoption before the mechanism is built, but a bad-faith actor could adopt the license and never implement the mechanism. This is a governance challenge, not a legal one.
+
+5. **Pie-Chart Specification version.** The pie-chart specification (draft v0.1) references v1.0 section numbers. It should be updated to reference v2.0 sections.
+
 ## [1.0] - 2025-01-01
 
 ### Added
@@ -17,23 +75,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Application instructions with header template (Section 6).
 - Reference materials linking to GPLv3, Peer Production License, and OVN Wiki.
 
-### Known Issues
+### Known Issues (v1.0, resolved in v2.0)
 
-The following issues are documented for transparency and will be addressed in future versions:
-
-1. **GPLv3 Framing Ambiguity** -- The preamble states the license "builds on the GNU General Public License v3 (GPLv3)" but does not incorporate GPLv3 terms by reference, does not include GPLv3 section numbering, and adds obligations (economic reciprocity) that conflict with GPLv3 Section 7. This creates confusion about whether works under this license are GPLv3-compatible. Clarification: this license is standalone and GPLv3-inspired, not a GPLv3 extension. See [RATIONALE.md](RATIONALE.md) for details.
-
-2. **Definition Precision** -- Several definitions would benefit from greater precision:
-   - "Material Benefits" includes "monetizable advantage" which is broad and difficult to measure.
-   - "Non-Commercial Entities" lists specific organizational types but the boundary between non-commercial and commercial use is not always clear (e.g., a cooperative selling software).
-   - "Use" covers a broad range of activities; not all should trigger economic reciprocity (e.g., personal use with no material benefit).
-
-3. **Reciprocity Mechanism Gaps** -- The license requires benefit allocation but does not specify:
-   - How "Material Benefits" are calculated or reported.
-   - What "transparently and in good faith" means in practice.
-   - Who verifies compliance or adjudicates disputes.
-   - Payment frequency, methods, or minimum thresholds for triggering payment.
-
-4. **Unspecified Pie-Chart Format** -- The license references a "Contribution Pie-Chart" but v1.0 does not define its format, required fields, or validation rules. A draft specification is provided separately in [spec/contribution-pie-chart.md](spec/contribution-pie-chart.md).
-
-5. **Invalid SPDX Syntax** -- The SPDX identifier `OVN Digital-1.0` contains a space, which is not valid SPDX syntax. The correct format for a custom identifier would be `LicenseRef-OVN-Digital-1.0`. This will be corrected in a future version; the v1.0 text is preserved as-is for the initial release.
+1. **GPLv3 Framing Ambiguity** -- Resolved in v2.0: license is now explicitly standalone with inspirations acknowledged.
+2. **Definition Precision** -- Resolved in v2.0: "Material Benefits" replaced by "Transactional Activity"; entity classifications removed.
+3. **Reciprocity Mechanism Gaps** -- Resolved in v2.0: replaced honor-system percentages with protocol-level enforcement and anti-circumvention.
+4. **Unspecified Pie-Chart Format** -- Addressed separately: draft specification at spec/contribution-pie-chart.md.
+5. **Invalid SPDX Syntax** -- Resolved in v2.0: corrected to `LicenseRef-OVN-Digital-2.0`.

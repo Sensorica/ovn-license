@@ -1,6 +1,6 @@
 # Applying the OVN License to a Holochain hApp
 
-This guide shows how to apply the OVN License for Digital Resources v1.0 to a Holochain hApp project, including dual-licensing with CAL-1.0 (recommended).
+This guide shows how to apply the OVN License for Digital Resources v2.0 to a Holochain hApp project, including dual-licensing with CAL-1.0 (recommended).
 
 ## Prerequisites
 
@@ -15,7 +15,7 @@ Place license files in your hApp project root:
 ```
 your-happ/
   LICENSE-CAL-1.0           Full text of CAL-1.0
-  LICENSE-OVN-1.0           Full text of OVN License v1.0 (copy of LICENSE.md)
+  LICENSE-OVN-2.0           Full text of OVN License v2.0 (copy of LICENSE.md)
   LICENSE                   Dual-license notice (see below)
   pie-chart.json            Contribution Pie-Chart
   happ.yaml                 hApp manifest (reference license)
@@ -39,10 +39,10 @@ This software is dual-licensed:
    distribution requirements.
    Full text: LICENSE-CAL-1.0
 
-2. OVN License for Digital Resources v1.0
-   Governs: economic reciprocity, contribution tracking, and
-   benefit distribution among contributors.
-   Full text: LICENSE-OVN-1.0
+2. OVN License for Digital Resources v2.0
+   Governs: contribution distribution mechanism protection,
+   contribution tracking, and value distribution among contributors.
+   Full text: LICENSE-OVN-2.0
    Contribution Pie-Chart: pie-chart.json
 
 Both licenses apply. Use of this software constitutes acceptance
@@ -66,9 +66,10 @@ Add a license header to each Rust source file in your zomes:
 ```rust
 // This work is dual-licensed under:
 // - Cryptographic Autonomy License 1.0 (CAL-1.0)
-// - OVN License for Digital Resources v1.0
+// - OVN License for Digital Resources v2.0
 // See LICENSE files and accompanying Contribution Pie-Chart.
-// Copyright (c) 2025 Your Name or Organization
+// SPDX-License-Identifier: CAL-1.0 AND LicenseRef-OVN-Digital-2.0
+// Copyright (c) [year] Your Name or Organization
 ```
 
 For `happ.yaml` and other YAML files:
@@ -76,9 +77,10 @@ For `happ.yaml` and other YAML files:
 ```yaml
 # This work is dual-licensed under:
 # - Cryptographic Autonomy License 1.0 (CAL-1.0)
-# - OVN License for Digital Resources v1.0
+# - OVN License for Digital Resources v2.0
 # See LICENSE files and accompanying Contribution Pie-Chart.
-# Copyright (c) 2025 Your Name or Organization
+# SPDX-License-Identifier: CAL-1.0 AND LicenseRef-OVN-Digital-2.0
+# Copyright (c) [year] Your Name or Organization
 ```
 
 ## Step 5: Reference in hApp Manifest
@@ -100,11 +102,21 @@ roles:
 
 # License metadata (informational, not part of Holochain spec)
 # license:
-#   type: "dual: CAL-1.0 + OVN-Digital-1.0"
+#   type: "dual: CAL-1.0 + LicenseRef-OVN-Digital-2.0"
 #   pie_chart: "pie-chart.json"
 ```
 
 Note: The `license` field is not part of the official Holochain hApp manifest specification. It is included as a comment for human reference. Formal license metadata support in hApp manifests may be proposed to the Holochain community.
+
+## Step 6: Implement the Contribution Distribution Mechanism
+
+The OVN License v2.0 is designed for software that includes a Contribution Distribution Mechanism. For Holochain hApps, this typically means:
+
+1. **Validation rules** in a zome that enforce contribution distribution during transactions.
+2. **Automatic value capture** from Transactional Activity, distributed per the pie-chart.
+3. **Network-level enforcement** through DHT validation (nodes that remove the mechanism produce incompatible data).
+
+If the mechanism is not yet implemented, you can still adopt the license. Include a note in your pie-chart's `metadata.governance` field that the mechanism is planned. The anti-circumvention obligations in Section 5 activate when the mechanism is added (see License Section 4(d)).
 
 ## On-Chain Verification
 
@@ -120,10 +132,11 @@ A reference implementation of the validation zome is planned. See the [pie-chart
 ## Checklist
 
 - [ ] `LICENSE-CAL-1.0` file present with full CAL-1.0 text
-- [ ] `LICENSE-OVN-1.0` file present with full OVN License text
+- [ ] `LICENSE-OVN-2.0` file present with full OVN License v2.0 text
 - [ ] `LICENSE` file with dual-license notice
 - [ ] `pie-chart.json` with valid contributor data and Holochain extensions
-- [ ] License headers in all `.rs` source files
+- [ ] License headers in all `.rs` source files (with SPDX identifiers)
 - [ ] License headers in YAML configuration files
 - [ ] `happ.yaml` references license (as comment)
 - [ ] Pie-chart validates against the JSON Schema
+- [ ] Contribution Distribution Mechanism implemented (or noted as planned)

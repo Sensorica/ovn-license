@@ -1,4 +1,4 @@
-# Compatibility: OVN License + GNU Affero General Public License v3
+# Compatibility: OVN License v2.0 + GNU Affero General Public License v3
 
 ## Overview
 
@@ -10,15 +10,15 @@ The OVN License and AGPLv3 are **not directly compatible** -- they cannot be app
 
 ### Key Conflicts
 
-| AGPLv3 Provision | OVN License Provision | Conflict |
-|-----------------|----------------------|----------|
-| Section 7: No additional restrictions | Section 3: Economic reciprocity (0.5% / 2%) | **Direct conflict** -- AGPLv3 does not allow requiring payment or benefit-sharing as an additional term |
-| Section 10: Automatic licensing | Section 1: License grant with conditions | **Tension** -- AGPLv3 grants automatic downstream licenses without additional conditions |
-| Section 5c: Modified source must be licensed under AGPL | Section 2: Must maintain OVN License + pie-chart | **Conflict** -- derivative works cannot satisfy both requirements simultaneously |
+| AGPLv3 Provision | OVN License v2.0 Provision | Conflict |
+|-----------------|---------------------------|----------|
+| Section 7: No additional restrictions | Section 5: Anti-circumvention of Contribution Distribution Mechanism | **Direct conflict** -- AGPLv3 does not allow requiring maintenance of a specific software feature as an additional term |
+| Section 10: Automatic licensing | Section 2: License grant with conditions | **Tension** -- AGPLv3 grants automatic downstream licenses without additional conditions |
+| Section 5c: Modified source must be licensed under AGPL | Section 3: Must maintain OVN License + pie-chart | **Conflict** -- derivative works cannot satisfy both requirements simultaneously |
 
 ### Why They Conflict
 
-The AGPLv3 follows the GPLv3 framework of permitted additional terms (Section 7). The economic reciprocity clause of the OVN License does not fit within any of the categories of permitted additional terms listed in AGPLv3 Section 7(a)-(f). Specifically, requiring a percentage of material benefits is an "additional restriction" under AGPLv3 Section 7, which means it would be stripped from any combined work.
+The AGPLv3 follows the GPLv3 framework of permitted additional terms (Section 7). The OVN License's anti-circumvention clause (Section 5), which prohibits removing the Contribution Distribution Mechanism, does not fit within any of the categories of permitted additional terms listed in AGPLv3 Section 7(a)-(f). Under AGPLv3 Section 7, such a clause would be classified as an "additional restriction" that may be stripped from any combined work.
 
 ## Bridge Component Strategy
 
@@ -85,8 +85,8 @@ AGPLv3 layer:
 
 OVN License layer:
   - Business logic and algorithms
+  - Contribution Distribution Mechanism
   - Contribution tracking integration
-  - Benefit distribution logic
   - pie-chart.json
 ```
 

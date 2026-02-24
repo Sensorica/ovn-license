@@ -1,4 +1,4 @@
-# Compatibility: OVN License + Permissive Licenses (MIT, Apache-2.0)
+# Compatibility: OVN License v2.0 + Permissive Licenses (MIT, Apache-2.0)
 
 ## Overview
 
@@ -16,24 +16,24 @@ This document explains how permissively-licensed code interacts with OVN-license
 |-------------|-----|------------|---------------------|
 | Include copyright notice | Yes | Yes | No -- OVN also requires notice inclusion |
 | Include license text | Yes (in copies) | Yes | No -- both can coexist in a NOTICES file |
-| State changes | No | Yes | No -- OVN requires pie-chart updates for contributions |
+| State changes | No | Yes | No -- OVN requires marking Modified Versions |
 | Patent grant | No | Yes | No -- OVN does not address patents |
 | Trademark restrictions | No | Yes | No -- independent concerns |
 
 **How to handle permissive dependencies:**
 
 1. Include the dependency's license in a `NOTICES` or `THIRD-PARTY-LICENSES` file.
-2. The OVN License's economic reciprocity clause applies to the overall project, not to individual dependencies. Users of the OVN-licensed project owe reciprocity based on the project's pie-chart, not on the permissive dependencies.
+2. The OVN License's anti-circumvention clause applies to the Contribution Distribution Mechanism in the OVN-licensed project, not to individual permissive dependencies. The mechanism captures value from Transactional Activity performed through the overall Work.
 3. The permissive dependencies' original authors are not automatically pie-chart contributors (unless they also contribute to the OVN-licensed project directly).
 
 ### Outbound: OVN Code in Permissive Projects
 
-**This is NOT allowed without relicensing.** You cannot take OVN-licensed code and include it in an MIT or Apache-2.0 project, because the OVN License's economic reciprocity clause would be lost. The OVN License requires that its terms be maintained in all redistributions (Section 2).
+**This is NOT allowed without relicensing.** You cannot take OVN-licensed code and include it in an MIT or Apache-2.0 project, because the OVN License's anti-circumvention clause and copyleft requirements (Section 3) would be lost. The OVN License requires that its terms be maintained in all redistributions.
 
 | Scenario | Allowed? | Reason |
 |----------|----------|--------|
 | MIT library used in OVN project | Yes | Permissive code flows into copyleft |
-| OVN code copied into MIT project | No | Would strip reciprocity obligations |
+| OVN code copied into MIT project | No | Would strip anti-circumvention and copyleft obligations |
 | OVN project depending on MIT library | Yes | Dependency, not incorporation |
 | MIT project depending on OVN library | Complex -- see below | Depends on linking model |
 
@@ -41,23 +41,24 @@ This document explains how permissively-licensed code interacts with OVN-license
 
 When an MIT or Apache-2.0 project uses an OVN-licensed library as a dependency:
 
-- **If the OVN code is incorporated** (copied, vendored, statically linked): The combined work must comply with the OVN License, including economic reciprocity. The permissive license of the outer project does not override the OVN License on the OVN-licensed component.
+- **If the OVN code is incorporated** (copied, vendored, statically linked): The combined work must comply with the OVN License, including maintaining the Contribution Distribution Mechanism and the Contribution Pie-Chart. The permissive license of the outer project does not override the OVN License on the OVN-licensed component.
 
 - **If the OVN code is a separate dependency** (dynamic linking, package manager dependency, network service): The outer project's license governs its own code. Users who also use the OVN-licensed dependency must comply with the OVN License for that dependency's use.
 
-## Reciprocity Clause Scope
+## Anti-Circumvention Scope
 
-A common concern: "If I use one OVN-licensed package in my otherwise MIT project, do I owe 2% of all revenue?"
+A common concern: "If I use one OVN-licensed package in my otherwise MIT project, does the anti-circumvention clause apply to my entire project?"
 
-**The reciprocity clause applies to material benefits derived from Use of the Work** (the OVN-licensed component). If the OVN-licensed component is a small utility in a large commercial project, the "Material Benefits" derived from that specific component may be modest. However, the license does not currently define how to calculate the portion of benefits attributable to a specific component in a larger system.
+**The anti-circumvention clause (Section 5) applies to the Contribution Distribution Mechanism** in the OVN-licensed component. If the OVN-licensed component includes a mechanism, you must not remove or disable it. The clause does not require you to add a mechanism to your own code or to the permissive components.
 
-This is identified as an open question in [RATIONALE.md](../RATIONALE.md) (Material Benefits calculation) and [CHANGELOG.md](../CHANGELOG.md) (Known Issue 3: Reciprocity Mechanism Gaps).
+However, if the OVN-licensed component is incorporated into a larger work (not just used as a separate dependency), the copyleft provision (Section 3(b)) requires Modified Versions to be distributed under the OVN License. This means incorporating OVN-licensed code into a permissive project effectively converts the combined work to OVN-licensed.
 
 **Practical advice for downstream users:**
 
-1. Evaluate whether the OVN-licensed component is central to your product's value or peripheral.
-2. When in doubt, contact the project's contributors to discuss a reasonable reciprocity arrangement.
-3. Consider contributing improvements back to the OVN-licensed component, which may be reflected in the pie-chart.
+1. Evaluate whether the OVN-licensed component is central to your product or peripheral.
+2. If peripheral, keep it as a separate dependency rather than incorporating it.
+3. When in doubt, contact the project's contributors to discuss the appropriate approach.
+4. Consider contributing improvements back to the OVN-licensed component, which may be reflected in the pie-chart.
 
 ## Practical Guidance for OVN Project Maintainers
 
@@ -71,7 +72,7 @@ This is identified as an open question in [RATIONALE.md](../RATIONALE.md) (Mater
 
 ```
 your-ovn-project/
-  LICENSE.md               OVN License v1.0
+  LICENSE.md               OVN License v2.0
   pie-chart.json           Contribution Pie-Chart
   NOTICES                  Third-party license notices
   src/
@@ -101,7 +102,7 @@ Copyright (c) 2024 Another Author
 
 | Direction | Compatibility | Notes |
 |-----------|--------------|-------|
-| Permissive code INTO OVN project | Compatible | Include notices, reciprocity applies to OVN project |
-| OVN code INTO permissive project | Not compatible | Reciprocity clause cannot be stripped |
+| Permissive code INTO OVN project | Compatible | Include notices; anti-circumvention applies to OVN project's mechanism |
+| OVN code INTO permissive project | Not compatible | Anti-circumvention and copyleft cannot be stripped |
 | Permissive project DEPENDING ON OVN library | Case-by-case | Depends on incorporation vs. separate dependency |
-| OVN reciprocity propagation upstream | Does not propagate | MIT/Apache-2.0 authors not affected |
+| OVN anti-circumvention propagation upstream | Does not propagate | MIT/Apache-2.0 authors not affected |

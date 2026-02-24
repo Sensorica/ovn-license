@@ -5,17 +5,18 @@
 
 ## Overview
 
-The Contribution Pie-Chart is a machine-readable file that accompanies software licensed under the OVN License for Digital Resources. It records the proportional contributions of each contributor to the project and serves as the basis for distributing material benefits under the license's economic reciprocity provisions (Sections 1-3).
+The Contribution Pie-Chart is a machine-readable file that accompanies software licensed under the OVN License for Digital Resources. It records the proportional contributions of each contributor to the project and serves as the basis for distributing value through the Contribution Distribution Mechanism under the license's protocol economics and anti-circumvention provisions (Sections 4 and 5).
 
 This specification defines the format, required fields, validation rules, and governance for pie-chart files.
 
 ## Relationship to the License
 
-The OVN License requires:
+The OVN License v2.0 requires:
 
-- **Section 1:** A copy of the Contribution Pie-Chart must be included in all copies or substantial portions of the Work.
-- **Section 2:** The pie-chart must be maintained in all redistributions. Modified versions may update the pie-chart to reflect new contributions.
-- **Section 3:** Material benefits are allocated to contributors "as per the Contribution Pie-Chart."
+- **Section 2:** A copy of the Contribution Pie-Chart must be included in all copies or substantial portions of the Work.
+- **Section 3:** The pie-chart must be maintained in all redistributions. Modified Versions may update the pie-chart to reflect new contributions, but must not remove existing Contributors without consent.
+- **Section 4:** The Contribution Distribution Mechanism distributes value to Contributors "according to the Contribution Pie-Chart."
+- **Section 5:** The governance process for modifying distribution parameters is recorded in the Contribution Pie-Chart.
 
 This specification defines what a valid Contribution Pie-Chart looks like and how it should be maintained.
 

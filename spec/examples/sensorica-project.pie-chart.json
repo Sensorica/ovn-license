@@ -3,7 +3,7 @@
   "project": {
     "name": "sensor-network-firmware",
     "repository": "https://github.com/sensorica/sensor-network-firmware",
-    "license_version": "1.0"
+    "license_version": "2.0"
   },
   "contributors": [
     {

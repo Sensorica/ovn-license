@@ -1,6 +1,6 @@
 # License Compatibility Analysis
 
-This directory contains analyses of how the OVN License for Digital Resources interacts with other software licenses. Each document examines a specific license, identifies compatibility issues, and provides practical guidance for projects that need to work with code under multiple licenses.
+This directory contains analyses of how the OVN License for Digital Resources v2.0 interacts with other software licenses. Each document examines a specific license, identifies compatibility issues, and provides practical guidance for projects that need to work with code under multiple licenses.
 
 ## Overview
 
@@ -24,7 +24,7 @@ Each document follows a consistent structure:
 
 - **This is not legal advice.** These analyses reflect the authors' understanding of the license texts. Consult a lawyer before making licensing decisions for your project.
 - **The OVN License is not OSI-approved.** Compatibility analysis is based on the license texts, not on any certification body's determination.
-- **These analyses are for v1.0 of the OVN License.** Future versions may change the compatibility landscape.
+- **These analyses are for v2.0 of the OVN License.** The v2.0 license uses an anti-circumvention model (protecting the Contribution Distribution Mechanism) rather than the v1.0 percentage-based model. This changes the compatibility landscape in some cases.
 
 ## Contributing
 
